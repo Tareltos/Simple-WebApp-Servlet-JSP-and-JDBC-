@@ -1,0 +1,41 @@
+-- Table: public."USERS"
+
+-- DROP TABLE public."USERS";
+
+CREATE TABLE public."USERS"
+(
+  user_name text NOT NULL,
+  "firstName" text NOT NULL,
+  "lastName" text NOT NULL,
+  password text NOT NULL,
+  CONSTRAINT "USERS_pkey" PRIMARY KEY (user_name)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public."USERS"
+  OWNER TO postgres;
+
+
+---------------------------
+---------------------------
+-- Table: public."spareParts"
+
+-- DROP TABLE public."spareParts";
+
+CREATE TABLE public."spareParts"
+(
+  "CODE" character(30) NOT NULL,
+  part_name character(30),
+  "group" character(50),
+  brand character(10),
+  discount double precision,
+  opt_price double precision,
+  rzn_price double precision,
+  CONSTRAINT "spareParts_pkey" PRIMARY KEY ("CODE")
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public."spareParts"
+  OWNER TO postgres;
